@@ -15,13 +15,13 @@
 
 extern "C" 
 {
-    extern char _binary_LICENSE_res_start;
-    extern char _binary_LICENSE_res_end;
-    extern char _binary_LICENSE_res_size;
+    extern char _binary_res_LICENSE_res_start;
+    extern char _binary_res_LICENSE_res_end;
+    extern char _binary_res_LICENSE_res_size;
 
-    extern char _binary_KEYS_res_start;
-    extern char _binary_KEYS_res_end;
-    extern char _binary_KEYS_res_size;
+    extern char _binary_res_KEYS_res_start;
+    extern char _binary_res_KEYS_res_end;
+    extern char _binary_res_KEYS_res_size;
 }
 
 static dlg_ui *ui;
@@ -499,7 +499,7 @@ void dlg_ui::about_ex()
         m_dlg_txtdisp = new dlg_txtdisp;
 
     std::string v(std::string(_("Version: ")) + std::string(FLORB_PROGSTR));
-    std::string l(&_binary_LICENSE_res_start, (size_t)&_binary_LICENSE_res_size);
+    std::string l(&_binary_res_LICENSE_res_start, (size_t)&_binary_res_LICENSE_res_size);
 
     m_dlg_txtdisp->title(_("About / License"));
     m_dlg_txtdisp->clear();
@@ -515,7 +515,7 @@ void dlg_ui::usage_ex()
     if (!m_dlg_txtdisp)
         m_dlg_txtdisp = new dlg_txtdisp;
 
-    std::string u(&_binary_KEYS_res_start, (size_t)&_binary_KEYS_res_size);
+    std::string u(&_binary_res_KEYS_res_start, (size_t)&_binary_res_KEYS_res_size);
 
     m_dlg_txtdisp->title(_("Usage"));
     m_dlg_txtdisp->clear();
